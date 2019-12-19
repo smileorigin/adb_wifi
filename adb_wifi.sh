@@ -7,7 +7,7 @@ devices=`adb devices|grep -w device`
 
 if [ -n "$devices" ]; then
     # get the phone ip
-    ip=`adb shell ifconfig wlan0|grep -w inet|awk '{print $2}'|awk -F ':' '{print $2}'`
+    ip=`adb shell ifconfig wlan0 | grep -w inet | awk '{print $2}' | awk -F ':' '{print $2}'`
 
     if [ -z "$ip" ]; then
         echo "Use the second method to get the ip"
